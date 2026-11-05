@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lalit Kumar Singh | Podcast Host & Interviewer Portfolio — Social Mindset BMSIT&M</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts matching the Vintage Editorial Poster Vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            DEFAULT: '#F6F0E6',
+                            dark: '#EAE0D0',
+                            paper: '#FBF8F3'
+                        },
+                        terracotta: {
+                            DEFAULT: '#C84B24',
+                            dark: '#A33918',
+                            light: '#E86A42'
+                        },
+                        charcoal: {
+                            DEFAULT: '#1E1E1C',
+                            muted: '#4A4843',
+                            studio: '#131311'
+                        },
+                        amber: {
+                            gold: '#D97706'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        script: ['Caveat', 'cursive'],
+                        mono: ['Space Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Vintage Paper Grain & Poster Texture */
+        :root {
+            --bg-primary: #F6F0E6;
+            --text-primary: #1E1E1C;
+            --card-bg: #FBF8F3;
+        }
+        .dark {
+            --bg-primary: #131311;
+            --text-primary: #F6F0E6;
+            --card-bg: #1E1E1B;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            background-image: radial-gradient(rgba(200, 75, 36, 0.06) 1px, transparent 0),
+                              radial-gradient(rgba(30, 30, 28, 0.04) 1px, transparent 0);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        /* Film Strip Border Pattern inspired by the Social Mindset Poster */
+        .film-strip {
+            background-image: repeating-linear-gradient(
+                to bottom,
+                #1E1E1C 0px,
+                #1E1E1C 12px,
+                transparent 12px,
+                transparent 22px
+            );
+        }
+
+        .film-holes-horizontal {
+            background-image: repeating-linear-gradient(
+                to right,
+                transparent 0px,
+                transparent 10px,
+                #F6F0E6 10px,
+                #F6F0E6 22px
+            );
+        }
+
+        /* Masking Tape Effect */
+        .tape-strip {
+            background: rgba(235, 222, 198, 0.82);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(2px);
+            border-left: 2px dashed rgba(0,0,0,0.08);
+            border-right: 2px dashed rgba(0,0,0,0.08);
+        }
+        .dark .tape-strip {
+            background: rgba(200, 75, 36, 0.28);
+            color: #F6F0E6;
+        }
+
+        /* Waveform Bar Animation */
+        @keyframes pulseWave {
+            0%, 100% { transform: scaleY(0.25); }
+            50% { transform: scaleY(1); }
+        }
+        .wave-bar {
+            transform-origin: bottom;
+            transition: transform 0.2s ease;
+        }
+        .playing .wave-bar {
+            animation: pulseWave 0.9s ease-in-out infinite;
+        }
+
+        /* Hand-drawn Oval Highlight like "YOU??" on the poster */
+        .hand-circle {
+            position: relative;
+            display: inline-block;
+        }
+        .hand-circle::after {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: -4px;
+            width: calc(100% + 16px);
+            height: calc(100% + 8px);
+            border: 2.5px solid #C84B24;
+            border-radius: 50% 45% 55% 40% / 45% 55% 45% 55%;
+            transform: rotate(-3deg);
+            pointer-events: none;
+        }
+
+        /* Print Styles for One-Page Host Resume */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+            .print-break-inside { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-terracotta selection:text-white overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-parchment/90 dark:bg-charcoal-studio/90 border-b border-stone-300/80 dark:border-stone-800 transition-colors no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Identity -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-terracotta text-white flex items-center justify-center shadow-md group-hover:rotate-6 transition-transform">
+                    <i data-lucide="mic" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg tracking-tight block leading-none">LALIT KUMAR SINGH</span>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-terracotta dark:text-terracotta-light">Host &amp; Interviewer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="#about" class="hover:text-terracotta transition-colors">About</a>
+                <a href="#strengths" class="hover:text-terracotta transition-colors">Strengths</a>
+                <a href="#journey" class="hover:text-terracotta transition-colors">Experience</a>
+                <a href="#gallery" class="hover:text-terracotta transition-colors">Event Gallery</a>
+                <a href="#contact" class="hover:text-terracotta transition-colors">Contact</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2.5">
+                <button id="themeToggle" onclick="toggleStudioTheme()" title="Switch Light/Dark Theme" class="p-2.5 rounded-xl border border-stone-300 dark:border-stone-700 hover:border-terracotta transition-colors">
+                    <i data-lucide="moon" id="themeIcon" class="w-4 h-4"></i>
+                </button>
+                <a href="#contact" class="px-4 py-2 rounded-xl bg-terracotta hover:bg-terracotta-dark text-white font-semibold text-sm shadow-sm transition-all flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <section id="about" class="relative pt-12 pb-16 md:py-20 border-b border-stone-300/80 dark:border-stone-800 overflow-hidden">
+            <!-- Decorative Sunset Circle -->
+            <div class="pointer-events-none absolute -top-20 -left-20 w-80 h-80 rounded-full bg-gradient-to-b from-terracotta/25 via-amber-500/15 to-transparent blur-2xl"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    
+                    <!-- Left Column: Clean Name, Bio & Contact -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Poster Tagline Bar -->
+                        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs sm:text-sm tracking-wider uppercase text-terracotta font-bold">
+                            <span>IDEAS</span>
+                            <span>•</span>
+                            <span>PEOPLE</span>
+                            <span>•</span>
+                            <span>CONVERSATIONS</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h1 class="font-serif font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05]">
+                                Lalit Kumar Singh
+                            </h1>
+                            <p class="font-serif italic text-xl sm:text-2xl text-terracotta dark:text-terracotta-light">
+                                Public Speaker, Debater &amp; Event Host
+                            </p>
+                        </div>
+
+                        <p class="text-base sm:text-lg text-stone-700 dark:text-stone-300 max-w-2xl leading-relaxed">
+                            From winning my first school debate championship in <strong class="font-semibold text-charcoal dark:text-white">Grade 10</strong> and placing in the <strong class="font-semibold text-charcoal dark:text-white">Top 6 out of 35 speakers at BMSIT&amp;M MUN</strong>, to hosting youth events with the <strong class="font-semibold text-charcoal dark:text-white">Leo Club of Kathmandu Dreams</strong> and managing operations at <strong class="font-semibold text-charcoal dark:text-white">ASTRA Defence Tech Club</strong> — I bring curiosity, stage confidence, and meaningful conversations to every mic.
+                        </p>
+
+                        <!-- Quick Contact & Profile Chips -->
+                        <div class="flex flex-wrap items-center gap-3 pt-2">
+                            <a href="mailto:lalit71718@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-charcoal text-parchment dark:bg-parchment dark:text-charcoal font-medium text-sm hover:opacity-90 transition">
+                                <i data-lucide="mail" class="w-4 h-4 text-terracotta-light"></i>
+                                lalit71718@gmail.com
+                            </a>
+
+                            <a id="heroLinkedinBtn" href="https://www.linkedin.com/in/lalit-kumar-singh-aiml/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 border-charcoal/20 dark:border-parchment/20 hover:border-terracotta text-sm font-medium transition">
+                                <i data-lucide="linkedin" class="w-4 h-4 text-terracotta"></i>
+                                <span id="linkedinLabelText">linkedin.com/in/lalit-kumar-singh-aiml</span>
+                            </a>
+                        </div>
+
+                        <!-- Key Highlights Strip -->
+                        <div class="grid grid-cols-3 gap-3 pt-4 max-w-xl">
+                            <div class="p-3.5 rounded-2xl bg-parchment-paper dark:bg-stone-900 border border-stone-300/80 dark:border-stone-800 shadow-sm">
+                                <div class="font-serif font-extrabold text-2xl sm:text-3xl text-terracotta">Top 6</div>
+                                <div class="text-xs text-stone-600 dark:text-stone-400 mt-0.5">Out of 35 at BMSIT MUN Debate</div>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-parchment-paper dark:bg-stone-900 border border-stone-300/80 dark:border-stone-800 shadow-sm">
+                                <div class="font-serif font-extrabold text-2xl sm:text-3xl text-terracotta">4+ Clubs</div>
+                                <div class="text-xs text-stone-600 dark:text-stone-400 mt-0.5">ASTRA, Leo Club, CCRC &amp; Debate</div>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-parchment-paper dark:bg-stone-900 border border-stone-300/80 dark:border-stone-800 shadow-sm">
+                                <div class="font-serif font-extrabold text-2xl sm:text-3xl text-terracotta">1st Place</div>
+                                <div class="text-xs text-stone-600 dark:text-stone-400 mt-0.5">10th Grade Debate Winner</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Clean Editorial Portrait Card -->
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-3xl bg-parchment-paper dark:bg-stone-900 border-2 border-charcoal dark:border-stone-700 shadow-[8px_8px_0px_0px_#1E1E1C] dark:shadow-[8px_8px_0px_0px_#C84B24] p-5 sm:p-6">
+                            
+                            <!-- Floating Handwritten Note -->
+                            <div class="tape-strip absolute -top-4 right-6 px-4 py-1 transform rotate-2 rounded z-10">
+                                <span class="font-script text-xl text-charcoal dark:text-parchment">“Stories travel further”</span>
+                            </div>
+
+                            <!-- Portrait Frame -->
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/4] bg-stone-200 dark:bg-stone-800 border-2 border-charcoal dark:border-stone-700 group">
+                                <img id="profileImagePreview" 
+                                     src="images/profile.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x600/C84B24/F6F0E6?text=Lalit+Kumar+Singh';"
+                                     alt="Lalit Kumar Singh" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            </div>
+
+                            <!-- Poster Pillars Strip -->
+                            <div class="mt-5 grid grid-cols-5 gap-1 text-center font-mono text-[10px] uppercase tracking-tighter">
+                                <span class="py-1.5 px-1 rounded bg-stone-200/80 dark:bg-stone-800 font-bold">IDEAS</span>
+                                <span class="py-1.5 px-1 rounded bg-stone-200/80 dark:bg-stone-800 font-bold">PEOPLE</span>
+                                <span class="py-1.5 px-1 rounded bg-terracotta/20 text-terracotta font-bold">CULTURE</span>
+                                <span class="py-1.5 px-1 rounded bg-stone-200/80 dark:bg-stone-800 font-bold">TALKS</span>
+                                <span class="py-1.5 px-1 rounded bg-amber-500/20 text-amber-800 dark:text-amber-300 font-bold">IMPACT</span>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between text-xs">
+                                <span class="font-mono text-stone-500 dark:text-stone-400">BMSIT&amp;M, Bengaluru</span>
+                                <span class="font-script text-lg text-terracotta">Create • Relate • Elevate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CORE STRENGTHS AS A PODCAST HOST & INTERVIEWER -->
+        <section id="strengths" class="py-16 border-b border-stone-300/80 dark:border-stone-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-widest text-terracotta font-bold">CORE STRENGTHS</span>
+                        <h2 class="font-serif font-extrabold text-3xl sm:text-4xl mt-1">Why I Belong Behind the Mic</h2>
+                    </div>
+                    <p class="font-script text-2xl text-terracotta transform -rotate-2">
+                        “Create • Relate • Elevate”
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Pillar 1 -->
+                    <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border-2 border-charcoal/15 dark:border-stone-800 hover:border-terracotta transition-all shadow-sm">
+                        <div class="w-12 h-12 rounded-2xl bg-terracotta/15 text-terracotta flex items-center justify-center mb-5">
+                            <i data-lucide="mic-2" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-mono text-[11px] uppercase tracking-wider text-stone-500">01 • Interviewing &amp; Debate</span>
+                        <h3 class="font-serif font-bold text-xl mt-1 mb-2">Spontaneous Questioning &amp; Active Listening</h3>
+                        <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                            Competing against 35 speakers at <strong>BMSIT&amp;M MUN Debate (Top 6)</strong> and winning my <strong>10th Grade Debate</strong> trained me to listen closely, think on my feet, and ask thoughtful follow-up questions in real time.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border-2 border-charcoal/15 dark:border-stone-800 hover:border-terracotta transition-all shadow-sm">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-5">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-mono text-[11px] uppercase tracking-wider text-stone-500">02 • Hosting &amp; Rapport</span>
+                        <h3 class="font-serif font-bold text-xl mt-1 mb-2">Making Guests Comfortable on Camera</h3>
+                        <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                            Through hosting events and leading sessions with the <strong>Leo Club of Kathmandu Dreams</strong>, I know how to build warm rapport with speakers and help first-time guests share their real stories naturally.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border-2 border-charcoal/15 dark:border-stone-800 hover:border-terracotta transition-all shadow-sm">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mb-5">
+                            <i data-lucide="calendar-check" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-mono text-[11px] uppercase tracking-wider text-stone-500">03 • Event Operations</span>
+                        <h3 class="font-serif font-bold text-xl mt-1 mb-2">End-to-End Event &amp; Studio Coordination</h3>
+                        <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                            Backed by my time in the <strong>CCRC Scientific Circle</strong> and the <strong>Event Management Department of ASTRA Defence Tech Club (BMSIT&amp;M)</strong>, I bring structured planning, guest coordination, and reliable execution.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sample Conversation Themes Tailored for Host & Interviewer Role -->
+                <div class="mt-10 rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 sm:p-8 border-2 border-charcoal/15 dark:border-stone-800">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-6 border-b border-stone-200 dark:border-stone-800">
+                        <div>
+                            <span class="font-mono text-xs uppercase tracking-widest text-terracotta font-bold">INTERVIEWER VISION</span>
+                            <h3 class="font-serif font-bold text-2xl mt-0.5">Sample Conversation Themes I Love Exploring</h3>
+                        </div>
+                        <span class="font-mono text-xs text-stone-500">IDEAS • PEOPLE • CONVERSATIONS</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                        <div class="space-y-2">
+                            <span class="px-2.5 py-1 rounded bg-terracotta/15 text-terracotta font-mono text-xs font-bold">Theme 01 • Tech &amp; Builders</span>
+                            <h4 class="font-serif font-bold text-lg">Inside Campus Innovation &amp; Defence Tech</h4>
+                            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                                Sitting down with student builders, AI/ML researchers, and club leads at BMSIT&amp;M to unpack how they turn raw ideas into working prototypes.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-800 dark:text-amber-300 font-mono text-xs font-bold">Theme 02 • Unfiltered Journeys</span>
+                            <h4 class="font-serif font-bold text-lg">Cross-Border Student Stories &amp; Growth</h4>
+                            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                                Honest conversations about adapting to new cities, overcoming stage fright, leading youth movements, and finding community in college.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="px-2.5 py-1 rounded bg-stone-200 dark:bg-stone-800 font-mono text-xs font-bold">Theme 03 • Perspectives</span>
+                            <h4 class="font-serif font-bold text-lg">Rapid-Fire Debates &amp; Big Questions</h4>
+                            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                                High-energy segments inspired by MUN &amp; debate formats where guests defend bold ideas on technology, culture, and student life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CHRONOLOGICAL EXPERIENCE & ACHIEVEMENTS TIMELINE -->
+        <section id="journey" class="py-16 border-b border-stone-300/80 dark:border-stone-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-widest text-terracotta font-bold">EXPERIENCE &amp; MILESTONES</span>
+                        <h2 class="font-serif font-extrabold text-3xl sm:text-4xl mt-1">Speaking, Hosting &amp; Leadership Journey</h2>
+                    </div>
+
+                    <!-- Filter Buttons -->
+                    <div class="no-print flex flex-wrap gap-2">
+                        <button onclick="filterTimeline('all')" data-filter="all" class="timeline-filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase bg-terracotta text-white font-bold transition">
+                            All (5)
+                        </button>
+                        <button onclick="filterTimeline('debate')" data-filter="debate" class="timeline-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase bg-parchment-paper dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:border-terracotta transition">
+                            Debate &amp; MUN
+                        </button>
+                        <button onclick="filterTimeline('hosting')" data-filter="hosting" class="timeline-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase bg-parchment-paper dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:border-terracotta transition">
+                            Hosting &amp; Events
+                        </button>
+                        <button onclick="filterTimeline('science')" data-filter="science" class="timeline-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase bg-parchment-paper dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:border-terracotta transition">
+                            Science &amp; Tech
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Timeline Cards List -->
+                <div class="relative pl-6 sm:pl-10 border-l-2 border-terracotta/50 space-y-8" id="timelineList">
+
+                    <!-- Item 1: 2025 ASTRA Defence Tech Club -->
+                    <div class="timeline-item relative group print-break-inside" data-category="hosting science">
+                        <div class="-left-[33px] sm:-left-[49px] top-1.5 absolute w-4 h-4 rounded-full bg-terracotta ring-4 ring-parchment dark:ring-charcoal-studio"></div>
+                        <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border border-stone-300 dark:border-stone-800 shadow-sm hover:border-terracotta transition">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-3 py-1 rounded-lg bg-terracotta/15 text-terracotta font-mono text-xs font-bold">
+                                    2025 – Present • BMSIT&amp;M
+                                </span>
+                                <span class="font-mono text-xs text-stone-500">Event Management Department</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl sm:text-2xl">
+                                Event Management Member — ASTRA Defence Tech Club
+                            </h3>
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400 mt-0.5">
+                                BMS Institute of Technology and Management (BMSIT&amp;M), Bengaluru
+                            </p>
+                            <p class="text-sm text-stone-700 dark:text-stone-300 mt-3 leading-relaxed">
+                                Coordinating event planning, stage logistics, guest scheduling, and on-ground execution for defence technology sessions and campus events at BMSIT&amp;M.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: 2024 - Present Leo Club of Kathmandu Dreams -->
+                    <div class="timeline-item relative group print-break-inside" data-category="hosting">
+                        <div class="-left-[33px] sm:-left-[49px] top-1.5 absolute w-4 h-4 rounded-full bg-terracotta ring-4 ring-parchment dark:ring-charcoal-studio"></div>
+                        <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border border-stone-300 dark:border-stone-800 shadow-sm hover:border-terracotta transition">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-800 dark:text-amber-300 font-mono text-xs font-bold">
+                                    2024 – Present • Hosting &amp; Leadership
+                                </span>
+                                <span class="font-mono text-xs text-stone-500">Member &amp; Event Host</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl sm:text-2xl">
+                                Active Member &amp; Event Host — Leo Club of Kathmandu Dreams
+                            </h3>
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400 mt-0.5">
+                                Youth Leadership, Anchoring &amp; Community Events
+                            </p>
+                            <p class="text-sm text-stone-700 dark:text-stone-300 mt-3 leading-relaxed">
+                                Gained extensive experience hosting live club events, moderating youth discussions, leading organizing committees, and engaging diverse audiences on stage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: 2024 BMSIT Debate & MUN Top 6 -->
+                    <div class="timeline-item relative group print-break-inside" data-category="debate">
+                        <div class="-left-[33px] sm:-left-[49px] top-1.5 absolute w-4 h-4 rounded-full bg-terracotta ring-4 ring-parchment dark:ring-charcoal-studio"></div>
+                        <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border-2 border-terracotta/40 shadow-sm hover:border-terracotta transition">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-3 py-1 rounded-lg bg-terracotta text-white font-mono text-xs font-bold">
+                                    2024 • Top 6 out of 35 Participants
+                                </span>
+                                <span class="font-mono text-xs text-terracotta font-bold">🏆 BMSIT&amp;M Achievement</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl sm:text-2xl">
+                                Top 6 Finalist — Debate Organized by MUN BMSIT&amp;M
+                            </h3>
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400 mt-0.5">
+                                BMS Institute of Technology and Management (BMSIT&amp;M)
+                            </p>
+                            <p class="text-sm text-stone-700 dark:text-stone-300 mt-3 leading-relaxed">
+                                Ranked in the <strong>Top 6 out of 35 participants</strong> in the college debate organized by MUN BMSIT&amp;M, demonstrating rapid critical thinking, structured argumentation, and confident public speaking.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: 2022 - 2024 CCRC Scientific Circle -->
+                    <div class="timeline-item relative group print-break-inside" data-category="science hosting">
+                        <div class="-left-[33px] sm:-left-[49px] top-1.5 absolute w-4 h-4 rounded-full bg-terracotta ring-4 ring-parchment dark:ring-charcoal-studio"></div>
+                        <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border border-stone-300 dark:border-stone-800 shadow-sm hover:border-terracotta transition">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-3 py-1 rounded-lg bg-stone-200 dark:bg-stone-800 font-mono text-xs font-bold">
+                                    2022 – 2024 • Grade 12
+                                </span>
+                                <span class="font-mono text-xs text-stone-500">Science &amp; Student Programs</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl sm:text-2xl">
+                                Active Member — CCRC Scientific Circle
+                            </h3>
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400 mt-0.5">
+                                Capital College and Research Centre (CCRC), Kathmandu
+                            </p>
+                            <p class="text-sm text-stone-700 dark:text-stone-300 mt-3 leading-relaxed">
+                                Contributed to scientific exhibitions, student workshops, and collaborative presentations, learning how to communicate technical ideas clearly to broad student audiences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Grade 10 Debate Winner -->
+                    <div class="timeline-item relative group print-break-inside" data-category="debate">
+                        <div class="-left-[33px] sm:-left-[49px] top-1.5 absolute w-4 h-4 rounded-full bg-terracotta ring-4 ring-parchment dark:ring-charcoal-studio"></div>
+                        <div class="rounded-2xl bg-parchment-paper dark:bg-stone-900 p-6 border border-stone-300 dark:border-stone-800 shadow-sm hover:border-terracotta transition">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-800 dark:text-amber-300 font-mono text-xs font-bold">
+                                    Grade 10 • 1st Place Winner
+                                </span>
+                                <span class="font-mono text-xs text-stone-500">Debate Championship</span>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl sm:text-2xl">
+                                1st Place Winner — School Debate Competition
+                            </h3>
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400 mt-0.5">
+                                Janta Secondary School, Gauridanda, Bardibas, Mahottari
+                            </p>
+                            <p class="text-sm text-stone-700 dark:text-stone-300 mt-3 leading-relaxed">
+                                Won 1st place in the Grade 10 debate competition, building my foundation in stage presence, vocal delivery, and persuasive storytelling.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EVENT & SPEAKING MOMENTS GALLERY -->
+        <section id="gallery" class="py-16 border-b border-stone-300/80 dark:border-stone-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-8">
+                    <span class="font-mono text-xs uppercase tracking-widest text-terracotta font-bold">MOMENTS ON STAGE &amp; IN ACTION</span>
+                    <h2 class="font-serif font-extrabold text-3xl sm:text-4xl mt-1">Event &amp; Speaking Gallery</h2>
+                </div>
+
+                <!-- Vintage Film Strip Header Bar -->
+                <div class="bg-charcoal py-2 px-4 rounded-t-2xl flex items-center justify-between text-[10px] font-mono text-amber-400/90 tracking-widest uppercase">
+                    <span>◀ EVENT HIGHLIGHTS ARCHIVE</span>
+                    <span class="hidden sm:inline">BMSIT&amp;M • KATHMANDU • BARDIBAS</span>
+                    <span>FRAME 01 — 04 ▶</span>
+                </div>
+
+                <!-- 4-Card Film Gallery Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-charcoal/95 p-6 rounded-b-2xl border-x-4 border-b-4 border-charcoal">
+                    
+                    <!-- Photo Card 1: BMSIT MUN Top 6 -->
+                    <div class="bg-parchment-paper text-charcoal rounded-xl p-3 shadow-lg flex flex-col justify-between transform hover:-translate-y-1 transition duration-300">
+                        <div>
+                            <div class="relative rounded-lg overflow-hidden aspect-[4/3] bg-stone-200 border border-stone-300 group">
+                                <img src="images/bmsit-mun.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x450/242422/F6F0E6?text=BMSIT+MUN+Debate%0ATop+6+of+35';"
+                                     alt="BMSIT MUN Debate Top 6" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            </div>
+                            <div class="mt-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-terracotta font-bold">2024 • BMSIT&amp;M</span>
+                                <h3 class="font-serif font-bold text-base leading-snug mt-0.5">MUN BMSIT Debate (Top 6 / 35)</h3>
+                                <p class="text-xs text-stone-600 mt-1">
+                                    Floor debate, impromptu rebuttals, and final six placement at BMSIT&amp;M.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 2: ASTRA Defence Tech Club -->
+                    <div class="bg-parchment-paper text-charcoal rounded-xl p-3 shadow-lg flex flex-col justify-between transform hover:-translate-y-1 transition duration-300">
+                        <div>
+                            <div class="relative rounded-lg overflow-hidden aspect-[4/3] bg-stone-200 border border-stone-300 group">
+                                <img src="images/astra-club.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x450/C84B24/F6F0E6?text=ASTRA+Defence+Tech%0AEvent+Management';"
+                                     alt="ASTRA Defence Tech Club Event Management" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            </div>
+                            <div class="mt-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-terracotta font-bold">2025 • BMSIT&amp;M</span>
+                                <h3 class="font-serif font-bold text-base leading-snug mt-0.5">ASTRA Defence Tech Club</h3>
+                                <p class="text-xs text-stone-600 mt-1">
+                                    Event Management Department operations and campus tech events.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 3: Leo Club of Kathmandu Dreams -->
+                    <div class="bg-parchment-paper text-charcoal rounded-xl p-3 shadow-lg flex flex-col justify-between transform hover:-translate-y-1 transition duration-300">
+                        <div>
+                            <div class="relative rounded-lg overflow-hidden aspect-[4/3] bg-stone-200 border border-stone-300 group">
+                                <img src="images/leo-club.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x450/9A3412/F6F0E6?text=Leo+Club+of%0AKathmandu+Dreams';"
+                                     alt="Leo Club of Kathmandu Dreams Hosting" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            </div>
+                            <div class="mt-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-terracotta font-bold">2024–PRESENT</span>
+                                <h3 class="font-serif font-bold text-base leading-snug mt-0.5">Leo Club of Kathmandu Dreams</h3>
+                                <p class="text-xs text-stone-600 mt-1">
+                                    Hosting youth programs, leading teams, and organizing community events.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 4: School Debate & CCRC Scientific Circle -->
+                    <div class="bg-parchment-paper text-charcoal rounded-xl p-3 shadow-lg flex flex-col justify-between transform hover:-translate-y-1 transition duration-300">
+                        <div>
+                            <div class="relative rounded-lg overflow-hidden aspect-[4/3] bg-stone-200 border border-stone-300 group">
+                                <img src="images/school-debate.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x450/3A3632/F6F0E6?text=CCRC+Scientific+Circle%0A%26+Debate+Winner';"
+                                     alt="CCRC Scientific Circle and School Debate Winner" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            </div>
+                            <div class="mt-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-terracotta font-bold">GRADE 10 &amp; 12</span>
+                                <h3 class="font-serif font-bold text-base leading-snug mt-0.5">CCRC Circle &amp; 10th Debate Win</h3>
+                                <p class="text-xs text-stone-600 mt-1">
+                                    CCRC Scientific Circle activities &amp; 1st place debate win at Janta Secondary School.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT FOOTER -->
+        <section id="contact" class="py-16 bg-charcoal text-parchment relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                    <div class="space-y-3 max-w-2xl">
+                        <span class="font-mono text-xs uppercase tracking-widest text-terracotta-light font-bold">
+                            CONNECT WITH ME
+                        </span>
+                        <h2 class="font-serif font-extrabold text-3xl sm:text-4xl leading-tight">
+                            Lalit Kumar Singh
+                        </h2>
+                        <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                            Always open to podcast hosting, guest interviewing, campus collaborations, and live event anchoring at BMSIT&amp;M.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="mailto:lalit71718@gmail.com" class="px-5 py-3 rounded-xl bg-terracotta hover:bg-terracotta-light text-white font-bold text-sm flex items-center gap-2 shadow-lg transition">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>lalit71718@gmail.com</span>
+                        </a>
+
+                        <button onclick="copyEmailAddress()" class="no-print px-4 py-3 rounded-xl bg-stone-800 hover:bg-stone-700 text-parchment font-mono text-xs flex items-center gap-2 border border-stone-700 transition">
+                            <i data-lucide="copy" class="w-4 h-4 text-amber-400"></i>
+                            <span id="copyEmailText">Copy Email</span>
+                        </button>
+
+                        <a id="footerLinkedinBtn" href="https://www.linkedin.com/in/lalit-kumar-singh-aiml/" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-stone-800 hover:bg-stone-700 text-parchment font-mono text-xs flex items-center gap-2 border border-stone-700 transition">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-terracotta-light"></i>
+                            <span>linkedin.com/in/lalit-kumar-singh-aiml</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-2">
+                    <p>© 2026 Lalit Kumar Singh • BMSIT&amp;M</p>
+                    <p class="font-mono">IDEAS • PEOPLE • CULTURE • CONVERSATIONS • IMPACT</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Filter Chronological Experience Timeline
+        function filterTimeline(category) {
+            const items = document.querySelectorAll('.timeline-item');
+            const buttons = document.querySelectorAll('.timeline-filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-terracotta', 'text-white', 'font-bold');
+                    btn.classList.remove('bg-parchment-paper', 'dark:bg-stone-800');
+                } else {
+                    btn.classList.remove('bg-terracotta', 'text-white', 'font-bold');
+                    btn.classList.add('bg-parchment-paper', 'dark:bg-stone-800');
+                }
+            });
+
+            items.forEach(item => {
+                const itemCats = item.getAttribute('data-category');
+                if (category === 'all' || itemCats.includes(category)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        // Studio Dark/Light Theme Toggle
+        function toggleStudioTheme() {
+            const htmlEl = document.documentElement;
+            const isDark = htmlEl.classList.toggle('dark');
+            const themeIcon = document.getElementById('themeIcon');
+            themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+
+        // Copy Email to Clipboard
+        function copyEmailAddress() {
+            const tempInput = document.createElement('input');
+            tempInput.value = 'lalit71718@gmail.com';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const copyText = document.getElementById('copyEmailText');
+            copyText.textContent = 'Copied!';
+            setTimeout(() => {
+                copyText.textContent = 'Copy Email';
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
